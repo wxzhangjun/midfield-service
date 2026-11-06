@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="人生中场90天陪伴服务说明：围绕一件正在发生的局势，持续拆解、复盘，帮助你形成自己的判断。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="人生中场｜90天陪伴服务说明">
+  <meta property="og:description" content="围绕一件正在发生的局势，持续拆解、复盘，帮助你形成自己的判断。">
+  <meta property="og:image" content="https://wxzhangjun.github.io/midfield-service/share-card.jpg">
+  <title>人生中场｜90天陪伴服务说明</title>
+  <style>
+    :root {
+      --ink: #252824;
+      --muted: #59615c;
+      --paper: #f7f3eb;
+      --white: #f8f5ee;
+      --line: #d8d9d2;
+      --olive: #78806b;
+      --olive-light: #e7e9e1;
+      --blue: #657b89;
+      --red: #8d5a55;
+      --copper: #9a744f;
+      --shadow: 0 16px 36px rgba(37, 40, 36, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.72 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
+    a { color: inherit; }
+    .topbar { position: sticky; top: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 12px clamp(20px, 5vw, 72px); background: rgba(247, 243, 235, .96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 30px; height: 30px; color: var(--white); background: var(--ink); border-radius: 50%; }
+    nav { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: 14px; }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--red); }
+    .version-tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 3px; color: var(--muted); font-size: 12px; white-space: nowrap; }
+    main { overflow: hidden; }
+    section { padding: 76px clamp(20px, 8vw, 128px); scroll-margin-top: 76px; }
+    .wrap { width: min(100%, 1080px); margin: 0 auto; }
+    .hero { display: grid; align-items: end; color: var(--white); background: var(--ink); }
+    .hero-inner { width: min(100%, 1080px); margin: 0 auto; padding: 96px 0 72px; }
+    .kicker { margin: 0 0 16px; color: #c2cbb7; font-size: 14px; }
+    h1 { max-width: 780px; margin: 0; font-size: clamp(40px, 6.5vw, 72px); line-height: 1.15; font-weight: 700; }
+    .hero-lede { max-width: 680px; margin: 22px 0 0; color: #e0e3dc; font-size: 19px; }
+    .hero-line { display: flex; gap: 0; flex-wrap: wrap; max-width: 740px; margin-top: 34px; border-top: 1px solid #60665f; }
+    .hero-line span { flex: 1 1 140px; padding: 13px 16px 0 0; color: #d5d9d1; font-size: 14px; }
+    .cta-row { margin-top: 34px; }
+    .btn { display: inline-block; padding: 13px 28px; border-radius: 3px; background: var(--red); color: var(--white); font-size: 16px; text-decoration: none; }
+    .btn:hover { opacity: .9; }
+    .btn.ghost { margin-left: 14px; border: 1px solid #8a9089; background: transparent; color: #d5d9d1; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 32px; }
+    .eyebrow { display: block; margin-bottom: 9px; color: var(--olive); font-size: 13px; font-weight: 700; }
+    h2 { max-width: 620px; margin: 0; font-size: clamp(30px, 4vw, 46px); line-height: 1.2; }
+    .section-head p { max-width: 390px; margin: 0; color: var(--muted); }
+    .scene-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .scene { padding: 26px 28px; background: var(--white); }
+    .scene b { display: block; margin-bottom: 8px; font-size: 18px; }
+    .scene p { margin: 0; color: var(--muted); font-size: 15px; }
+    .scene-tail { margin-top: 26px; font-size: 18px; }
+    .story { display: grid; grid-template-columns: 1.1fr .9fr; gap: 38px; align-items: center; }
+    .story p { margin: 0; font-size: 20px; }
+    .quote { padding: 26px 28px; border-left: 4px solid var(--red); background: var(--white); box-shadow: var(--shadow); font-size: 23px; line-height: 1.5; }
+    .host { display: grid; grid-template-columns: 200px 1fr; gap: 38px; align-items: start; }
+    .host-photo { width: 200px; height: 250px; border-radius: 4px; object-fit: cover; box-shadow: var(--shadow); }
+    .host-text p { margin: 0 0 14px; font-size: 17px; }
+    .host-line { margin: 18px 0; padding-left: 16px; border-left: 3px solid var(--olive); font-size: 18px; font-weight: 600; line-height: 1.6; }
+    .host-line.gold { border-left-color: var(--copper); }
+    .host-note { margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .placeholder-note { display: inline-block; margin-top: 4px; padding: 4px 10px; border: 1px dashed var(--copper); border-radius: 3px; color: var(--copper); font-size: 13px; }
+    .method-band { background: #e9ebe5; }
+    .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #c9cec5; border: 1px solid #c9cec5; }
+    .method { min-height: 220px; padding: 22px; background: #f8f8f3; }
+    .method-no { color: var(--olive); font: 700 14px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .method h3 { margin: 38px 0 8px; font-size: 19px; }
+    .method p { margin: 0; color: var(--muted); font-size: 14px; }
+    .case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .case { padding: 24px 26px; background: var(--white); }
+    .case .tag { display: block; margin-bottom: 10px; color: var(--blue); font-size: 12px; font-weight: 700; letter-spacing: 1px; }
+    .case h3 { margin: 0 0 8px; font-size: 18px; }
+    .case p { margin: 0; color: var(--muted); font-size: 14px; }
+    .echo { margin-top: 28px; padding: 26px 28px; border-left: 4px solid var(--red); background: var(--white); box-shadow: var(--shadow); }
+    .echo p { margin: 0 0 10px; font-size: 19px; line-height: 1.6; }
+    .echo p:last-child { margin-bottom: 0; }
+    .echo .who { color: var(--muted); font-size: 13px; }
+    .deliverables { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+    .deliverable { display: grid; grid-template-columns: 42px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .deliverable-no { color: var(--blue); font-weight: 700; }
+    .deliverable h3 { margin: 0 0 5px; font-size: 18px; }
+    .deliverable p { margin: 0; color: var(--muted); font-size: 14px; }
+    .timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 34px; }
+    .timeline::before { position: absolute; top: 11px; right: 8%; left: 8%; height: 2px; background: var(--line); content: ""; }
+    .phase { position: relative; padding: 0 18px 0 0; }
+    .dot { position: relative; z-index: 1; display: block; width: 23px; height: 23px; border: 6px solid var(--paper); border-radius: 50%; background: var(--olive); box-shadow: 0 0 0 1px var(--olive); }
+    .phase:nth-child(2) .dot { background: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+    .phase:nth-child(3) .dot { background: var(--copper); box-shadow: 0 0 0 1px var(--copper); }
+    .phase:nth-child(4) .dot { background: var(--red); box-shadow: 0 0 0 1px var(--red); }
+    .phase h3 { margin: 18px 0 5px; font-size: 17px; }
+    .phase p { margin: 0; color: var(--muted); font-size: 14px; }
+    .commitment { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .commitment-block { padding-top: 18px; border-top: 3px solid var(--blue); }
+    .commitment-block.user { border-color: var(--red); }
+    .commitment-block h3 { margin: 0 0 12px; font-size: 21px; }
+    ul.clean { margin: 0; padding: 0; list-style: none; }
+    ul.clean li { position: relative; margin: 9px 0; padding-left: 19px; }
+    ul.clean li::before { position: absolute; left: 0; color: var(--olive); content: "·"; font-size: 22px; line-height: 1; }
+    .measurement { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: start; }
+    .metric-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .metric { min-height: 116px; padding: 16px; background: var(--white); }
+    .metric b { display: block; margin-bottom: 5px; color: var(--olive); }
+    .metric span { color: var(--muted); font-size: 13px; }
+    .note { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    .starter { display: grid; grid-template-columns: 220px 1fr; gap: 28px; margin-top: 34px; padding: 24px 28px; background: var(--white); border-left: 4px solid var(--olive); }
+    .starter h3 { margin: 0; font-size: 18px; }
+    .starter p.sub { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .starter ol { margin: 0; padding-left: 20px; }
+    .starter li { margin: 6px 0; color: var(--muted); font-size: 15px; }
+    .take-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .take-col { padding-top: 18px; border-top: 3px solid var(--olive); }
+    .take-col.soft { border-top-color: var(--copper); }
+    .take-col h3 { margin: 0 0 12px; font-size: 21px; }
+    .take-tail { margin-top: 28px; padding: 24px 28px; background: var(--white); border-left: 4px solid var(--red); box-shadow: var(--shadow); font-size: 18px; line-height: 1.7; }
+    .payment { background: #e7e9e1; }
+    .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+    .price { padding: 26px; background: var(--white); border-top: 4px solid var(--olive); }
+    .price strong { display: block; margin: 5px 0; font-size: 34px; }
+    .price span { color: var(--muted); }
+    .payment-steps { margin: 0; padding-left: 20px; }
+    .payment-steps li { padding: 0 0 12px 5px; }
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .fit-col h3 { margin: 0 0 12px; font-size: 20px; }
+    .boundary { padding: 22px 24px; background: #e4e9e8; border-left: 4px solid var(--blue); }
+    .boundary p { margin: 0 0 12px; }
+    .boundary p:last-child { margin-bottom: 0; }
+    .before-talk { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .talk-item { min-height: 150px; padding: 18px; background: var(--white); }
+    .talk-item b { display: block; margin-bottom: 12px; color: var(--blue); }
+    .talk-item span { color: var(--muted); font-size: 14px; }
+    .closing { padding: 72px clamp(20px, 8vw, 128px); color: var(--white); background: var(--ink); }
+    .closing .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
+    .closing h2 { font-size: 32px; }
+    .closing p { max-width: 480px; margin: 18px 0 0; color: #d5d9d1; }
+    .contact-card { padding: 26px 28px; border: 1px solid #4a4f49; border-radius: 4px; }
+    .contact-card b { display: block; margin-bottom: 8px; font-size: 18px; }
+    .contact-card p { margin: 0 0 6px; color: #d5d9d1; font-size: 15px; }
+    .qr-slot { display: grid; place-items: center; width: 132px; height: 132px; margin-top: 16px; border: 1px dashed #8a9089; border-radius: 4px; color: #8a9089; font-size: 12px; text-align: center; }
+    footer { padding: 20px clamp(20px, 8vw, 128px); color: var(--muted); font-size: 13px; }
+    .float-cta { position: fixed; right: 18px; bottom: 22px; z-index: 9; padding: 13px 22px; border-radius: 999px; background: var(--red); color: var(--white); font-size: 15px; text-decoration: none; box-shadow: 0 10px 24px rgba(37, 40, 36, .25); }
+    @media (max-width: 760px) {
+      nav { display: none; }
+      section { padding-top: 58px; padding-bottom: 58px; }
+      .hero-inner { padding: 72px 0 56px; }
+      .section-head, .story, .measurement, .payment-grid, .fit-grid, .commitment, .scene-grid, .closing .wrap, .starter, .case-grid, .take-grid { display: grid; grid-template-columns: 1fr; }
+      .section-head { align-items: start; }
+      .host { grid-template-columns: 1fr; }
+      .method-grid { grid-template-columns: 1fr 1fr; }
+      .timeline { grid-template-columns: 1fr 1fr; gap: 26px 12px; }
+      .timeline::before { display: none; }
+      .before-talk { grid-template-columns: 1fr 1fr; }
+      .btn.ghost { margin: 12px 0 0; }
+    }
+    @media (max-width: 460px) {
+      .method-grid, .deliverables, .metric-list, .before-talk { grid-template-columns: 1fr; }
+      .hero-line { display: grid; grid-template-columns: 1fr 1fr; }
+      .phase { padding-right: 5px; }
+      .version-tag { font-size: 11px; }
+    }
+    @media print {
+      .topbar { position: static; }
+      nav, .float-cta { display: none; }
+      section, .closing { padding: 34px 0; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">中</span><span>人生中场</span></div>
+    <nav aria-label="页面导航"><a href="#scenes">你可能正在经历</a><a href="#method">怎么陪伴</a><a href="#delivery">交付内容</a><a href="#payment">费用</a><a href="#fit">服务边界</a></nav>
+    <span class="version-tag">服务说明 v0.9</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">写给正在承担责任、面对复杂局势的人</p>
+        <h1>人生中场，<br>把一件事真正看清楚。</h1>
+        <p class="hero-lede">用90天，陪你把正在面对的一件事持续拆开、看清。让事实、关系、约束、选项和代价逐渐显出来，帮助你形成自己的判断。</p>
+        <div class="hero-line"><span>90天持续陪伴</span><span>每周一次沟通</span><span>每次1至1.5小时</span></div>
+        <div class="cta-row"><a class="btn" href="#contact">先聊一聊我的处境</a><a class="btn ghost" href="#scenes">先看看适不适合我</a></div>
+      </div>
+    </section>
+
+    <section id="scenes">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">你可能正在经历</span><h2>这些事，<br>往往不是聊一次就能看清的。</h2></div><p>中年阶段的难题很少是单一问题，它们牵连着钱、人、责任和时间。以下处境，是这项陪伴服务主要面对的情形。</p></div>
+        <div class="scene-grid">
+          <div class="scene"><b>经营上的去留</b><p>生意连续承压，关不甘心、扛看不到头。每一方——家人、员工、合伙人——都有自己的立场，而你迟迟没有坐下来把账和局势完整摆开。</p></div>
+          <div class="scene"><b>职业的转折</b><p>离开还是留下，转型还是坚守。选项看起来很多，每个选项背后的代价却没人帮你一条条算清楚。</p></div>
+          <div class="scene"><b>家庭与责任的拉扯</b><p>父母养老、孩子教育、伴侣关系同时摆上桌。不是不想面对，而是没有一段不被打扰的时间，把优先级和边界理出来。</p></div>
+          <div class="scene"><b>悬而未决的关系</b><p>一段合作关系或亲密关系到了必须处理的节点。情绪之外，事实是什么、底线在哪里、退路有没有，需要有人陪你冷静过一遍。</p></div>
+        </div>
+        <p class="scene-tail">如果你在上面看到了自己的影子，这份说明值得继续读完；如果没有，也可以直接找我聊聊你的具体情况。</p>
+      </div>
+    </section>
+
+    <section class="method-band" id="why">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">项目缘起</span><h2>有些局势，<br>一次谈话很难看完。</h2></div><p>经营、家庭、关系与责任交织在一起，今天得到的信息可能会改变昨天的判断。一次性报告能留下快照，却未必够用来持续观察和校准。</p></div>
+        <div class="story"><p>“人生中场”从内容出发，帮助人认出自己正在面对的局势；陪伴服务则围绕一个人的具体处境，持续回看事实与判断。我们会在90天里一起工作，也会如实检验这种交付是否真的有价值。</p><div class="quote">陪你看清局势，<br>判断和选择仍由你自己完成。</div></div>
+      </div>
+    </section>
+
+    <section id="host">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">陪你工作的人</span><h2>俊哥是谁，<br>为什么做这件事。</h2></div><p>90天的陪伴建立在信任上。开始之前，你有理由先了解坐在对面的是谁。</p></div>
+        <div class="host">
+          <img class="host-photo" src="host.jpg" alt="俊哥肖像">
+          <div class="host-text">
+            <p>我是俊哥。前20年在地产行业，近10年做科创管理咨询和私董会顾问，这些年陪不少创始人拆过商业上的局。</p>
+            <div class="host-line">我擅长的其实只有一件事：把一团乱麻的局面，拆成事实、结构、选项和代价。</div>
+            <p>这些年我发现，很多在商业上极其聪明的人，到了人生中场却陷入"无盈余运行"：透支身体维持人设，资源分散，只有焦虑。企业的局我能拆，人的局，其实是同一套承重逻辑——</p>
+            <div class="host-line gold">地产算的是钢筋承重，人生算的是认知承重。</div>
+            <p>我自己也在中场。2016年用三个月戒掉25年的烟，2021年开始打坐，近五年减重近20斤。所以我不会站在岸上给你讲课，更像先走了一段、带着地图回来的同行人。在推出90天陪伴之前，我已经用"问卷、深度对话、《局势报告》"的一次性交付完成了首批种子用户内测；这次升级，是把一张快照变成一段持续校准的同行。</p>
+            <p class="host-note">有一点要说在前面：涉及心理、法律、医疗等专业问题时，我不会硬扛，会明确建议并协助你寻找对应的专业人士。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-band" id="method">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">工作方法</span><h2>从局势出发，<br>一步步把问题拆开。</h2></div><p>每周一起把新事实放回原来的局势里，检查原有判断是否仍然成立，留下可以核对和继续观察的记录。</p></div>
+        <div class="method-grid">
+          <article class="method"><span class="method-no">01 / 事实</span><h3>发生了什么</h3><p>区分已经确认的事实、个人解释和仍待核实的信息。</p></article>
+          <article class="method"><span class="method-no">02 / 结构</span><h3>谁与什么在影响它</h3><p>梳理关键角色、责任、资源、约束和时间窗口。</p></article>
+          <article class="method"><span class="method-no">03 / 判断</span><h3>有哪些选项与代价</h3><p>比较不同方向所依赖的条件，不把复杂问题压成标准答案。</p></article>
+          <article class="method"><span class="method-no">04 / 回看</span><h3>行动带来了什么新事实</h3><p>记录你选择采取或暂缓的动作，再回来看局势如何变化。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="example">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">种子用户实录</span><h2>他们已经<br>先走了一段。</h2></div><p>在90天陪伴推出前，"问卷＋深度对话＋《局势报告》"的一次性交付已在种子用户中完成内测。以下为脱敏实录；90天陪伴在此基础上，把一张快照变成持续校准。</p></div>
+        <div class="case-grid">
+          <div class="case"><span class="tag">档案 001 · 实体创业者</span><h3>"水温在下降"</h3><p>她经营一家重资产实体店，是身边人眼里最自律的那种人。但她自己清楚，再用力划水，也追不上水温下降的速度。拆完才发现，卡住她的不是不努力，而是安全感全押在店面业绩上，等于一条腿走路。那30天，她没有先去追流量，而是从恢复运动开始，把做决定的力气先攒了回来。</p></div>
+          <div class="case"><span class="tag">档案 002 · 美育机构创办人</span><h3>"课学了一堆，回去还是老样子"</h3><p>她做了十年美育机构，管理课报了不少，笔记记了一堆，回到公司一切照旧。不是课没用，是学到的新东西和十几年的老习惯拧着。后来从每天早上写十五分钟字开始，把脑子里的乱先倒出来。第四周，那件拖了很久、一提就烦的人事问题，她谈完了。</p></div>
+          <div class="case"><span class="tag">档案 003 · 商业地产经营者</span><h3>"最有劲的动作，顶在最大的风口上"</h3><p>他做商业地产很多年，最能来劲的事是签大单，可这几年签单越来越难。摆开一起看才发现：他最用力的方向，正好迎着最大的逆风。他没有立刻改什么，但第一次看清了"全押在大单上"这件事的分量——看清，本身就是变化的第一步。</p></div>
+          <div class="case"><span class="tag">档案 004 · 企业管理者</span><h3>"现在平衡，但预见的是消耗"</h3><p>她做管理多年，问卷里写现在的状态"大致平衡"，可问到一年后会怎样，她写的是"消耗"。这两个答案放在一起，比任何诉苦都清楚——人还在正常运转，恢复的余地正在悄悄变窄。她说自己"暂时说不清楚方向"。没关系，一张草图的意义，就是从不清楚的地方开始。</p></div>
+        </div>
+        <div class="echo">
+          <p>"这不像一次咨询，更像一次理性的体检。"</p>
+          <p>"你能把我很模糊的感受，用结构化的语言说出来。这种被看见本身，就是巨大的治愈。"</p>
+          <p class="who">—— 种子用户反馈，均已脱敏</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-band" id="delivery">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">90天交付</span><h2>一段持续陪伴，<br>留下可以回看的记录。</h2></div><p>核心沟通每周一次，每次1至1.5小时。会后留下结构化纪要，阶段回顾和最终总结把变化连起来。</p></div>
+        <div class="deliverables">
+          <article class="deliverable"><span class="deliverable-no">01</span><div><h3>初始局势地图</h3><p>整理起点、关键角色、已知事实、约束、时间窗口与待核实信息。</p></div></article>
+          <article class="deliverable"><span class="deliverable-no">02</span><div><h3>每周一次深入沟通</h3><p>每次1至1.5小时，围绕当周变化与当前最关键的问题展开。</p></div></article>
+          <article class="deliverable"><span class="deliverable-no">03</span><div><h3>每周沟通纪要</h3><p>记录新增事实、判断变化、待核实问题和你自选的下一步。</p></div></article>
+          <article class="deliverable"><span class="deliverable-no">04</span><div><h3>第6周中段回顾</h3><p>回看前半程的事实、参与情况和判断变化，共同确认后半程重点。</p></div></article>
+          <article class="deliverable"><span class="deliverable-no">05</span><div><h3>阶段量化自评</h3><p>在启动、中段和结束时自评五个维度，并用具体经历说明分数。</p></div></article>
+          <article class="deliverable"><span class="deliverable-no">06</span><div><h3>第90天总结报告</h3><p>对照起点与过程，呈现看清的变量、判断变化、行动与未解决问题。</p></div></article>
+        </div>
+        <p class="note">量表用于同一用户的阶段对照，不作横向排名，也不代表效果保证。报告会保留没有变化或问题变复杂的部分。</p>
+        <div class="starter">
+          <div><h3>启动材料：问卷与建档</h3><p class="sub">付费启动后，你会先收到一份启动问卷（约20分钟），它将成为初始局势地图的底稿。问卷不谈感想，只收集事实。</p></div>
+          <ol><li>这件事目前的事实是什么？哪些是你确认过的，哪些是你的推测？</li><li>它牵涉到哪些人？他们各自的立场和约束力是什么？</li><li>如果90天后只看一件事，你最希望看清什么？</li></ol>
+        </div>
+        <div class="timeline" aria-label="90天交付阶段">
+          <div class="phase"><span class="dot"></span><h3>启动周</h3><p>问卷、基线自评、共同确定当前要看清的问题。</p></div>
+          <div class="phase"><span class="dot"></span><h3>第1至5周</h3><p>每周沟通并持续更新局势地图和沟通纪要。</p></div>
+          <div class="phase"><span class="dot"></span><h3>第6周</h3><p>完成中段回顾，确认后半程的关注重点。</p></div>
+          <div class="phase"><span class="dot"></span><h3>第7周至第90天</h3><p>继续陪伴、结束自评并形成总结报告。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="commitment">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">双方投入</span><h2>这段服务需要<br>双方都留出时间。</h2></div><p>深度陪伴不适合只在出问题时临时出现。稳定参与和真实信息，是共同工作的基础。</p></div>
+        <div class="commitment">
+          <div class="commitment-block"><h3>俊哥负责</h3><ul class="clean"><li>每周安排一次1至1.5小时的正式沟通</li><li>整理每周纪要并维护局势地图</li><li>在中段和结束时完成阶段回顾</li><li>帮助拆解问题，不替你作决定</li></ul></div>
+          <div class="commitment-block user"><h3>你需要</h3><ul class="clean"><li>每周至少预留1小时；当次预约1.5小时，需留足相应时间</li><li>按约定参加沟通，提前说明改期需要</li><li>提供与当前局势有关的事实和进展</li><li>核对纪要、完成自评，并对自己的选择负责</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-band" id="change">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">如何观察变化</span><h2>用分数记录感受，<br>用事实解释变化。</h2></div><p>每个阶段，你对以下维度作0至4分自评，并举出具体事例。分数不作为承诺，只帮助回看过程。</p></div>
+        <div class="measurement">
+          <div class="metric-list">
+            <div class="metric"><b>事实清晰</b><span>能否区分事实、推测与待核实项</span></div>
+            <div class="metric"><b>关键变量</b><span>能否说出主要角色、条件与约束</span></div>
+            <div class="metric"><b>选项与代价</b><span>能否看见不同方向的前提和代价</span></div>
+            <div class="metric"><b>下一步判断</b><span>能否提出自己选择、可观察的一步</span></div>
+            <div class="metric"><b>判断自主</b><span>能否说明自己的判断及仍存疑处</span></div>
+          </div>
+          <div><p>除自评外，也会回看可以核对的过程证据：出现了哪些新事实，哪些判断被修正，你做了什么或决定暂缓什么，以及行动后发生了什么。</p><p class="note">这是阶段自我观察框架，尚未经过标准化测评验证。分数仅用于个人纵向观察，服务不承诺分数上升；感受需要结合事实记录一起回看。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="takeaway">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">90天后你会带走什么</span><h2>花的钱，最后要落在<br>一些具体的东西上。</h2></div><p>陪伴的感受没法称重，但过程里产生的记录是实的。90天结束时，下面这些都在你手里。</p></div>
+        <div class="take-grid">
+          <div class="take-col"><h3>看得见的</h3><ul class="clean"><li>一张初始局势地图——你的处境第一次被完整地摆在一张纸上</li><li>十二周左右的沟通纪要——每周的新事实、判断变化和待定问题，都有字为凭</li><li>三次五维自评——分数只是刻度，重要的是你写下的、支撑分数的那些具体事例</li><li>一份第90天总结报告——起点和终点摆在一起，变化不用说服，自己看得见</li></ul></div>
+          <div class="take-col soft"><h3>会慢慢显出来的</h3><ul class="clean"><li>再做判断时，先分清事实和推测的习惯</li><li>一套能带走的拆解方法——下次遇到新局势，不用从零开始慌</li><li>一个知道你来路的人。再有事，不用从头讲起</li></ul></div>
+        </div>
+        <div class="take-tail">这些记录还有一层意义：从今天起，你的变化第一次有人陪着写下来。日子一天天过不觉得，回头看，轨迹就在那里。90天之后，这些记录全部属于你。</div>
+      </div>
+    </section>
+
+    <section class="payment" id="payment">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">服务费用</span><h2>6800元 / 90天</h2></div><p>首批服务期间，双方在了解服务内容、投入和边界后，自主决定是否开始。规则先谈清楚，再付款。</p></div>
+        <div class="payment-grid">
+          <div class="price"><span>两次支付</span><strong>3400 + 3400</strong><span>第一笔在正式启动前支付；第二笔在第6周中段回顾完成后、进入后半程前支付。</span></div>
+          <ol class="payment-steps"><li>先沟通你的具体局势、希望看清的问题和可投入时间。</li><li>俊哥说明服务方式、边界、每周投入要求与费用安排。</li><li>启动前，双方就改期、暂停、退出与退款规则形成书面约定，确认后支付3400元启动款。</li><li>完成第6周中段回顾后，支付第二笔3400元，再进入后半程。</li><li>第90天完成自评和总结报告。</li></ol>
+        </div>
+        <p class="note">中途暂停、延期、退出、改期与退款的具体规则，会在付费前以书面形式与你逐条确认，确认后再启动。你在确认前不需要支付任何费用。</p>
+      </div>
+    </section>
+
+    <section id="fit">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">适合与边界</span><h2>先确认这是不是<br>值得一起工作的事。</h2></div><p>购买前的沟通可以按你的决策节奏进行，不限定为一次电话，也不要求当场决定。</p></div>
+        <div class="fit-grid">
+          <div class="fit-col"><h3>可能适合</h3><ul class="clean"><li>你正面对一件具体、持续影响经营或生活的事</li><li>局势牵涉多方关系、责任、资源或不确定信息</li><li>你希望自己看清和判断，而非索取一套标准答案</li><li>你能每周留出时间，持续提供真实进展并参与复盘</li></ul></div>
+          <div class="boundary"><h3>服务边界</h3><p>不替用户做决定，不保证经营、关系或其他外部结果；不做随时在线的即时陪聊，也不代替医疗、心理、法律、金融等专业服务。</p><p>如果当前问题主要需要专业诊断、危机干预或紧急处置，应优先联系相应专业人士或服务机构。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conversation">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">购买前了解</span><h2>把关键信息谈清楚，<br>再由你决定。</h2></div><p>你可以有自己的判断周期。沟通可以根据情况继续，不催促，也不要求你当场决定。</p></div>
+        <div class="before-talk">
+          <div class="talk-item"><b>你的局势</b><span>正在发生什么，当前最牵动你的问题是什么？</span></div>
+          <div class="talk-item"><b>你的期待</b><span>90天后，你希望对哪些事情看得更清楚？</span></div>
+          <div class="talk-item"><b>工作方式</b><span>每周沟通和持续记录是否适合你的节奏？</span></div>
+          <div class="talk-item"><b>服务边界</b><span>哪些由陪伴支持，哪些需要其他专业人士？</span></div>
+          <div class="talk-item"><b>费用与决定</b><span>了解价格和付款节点后，你可以继续考虑，再告知决定。</span></div>
+        </div>
+        <p class="note">了解沟通的次数、间隔和具体安排由双方商定，不设统一决策期限。正式局势建档和持续分析在付费启动后进行。</p>
+      </div>
+    </section>
+  </main>
+  <section class="closing" id="contact">
+    <div class="wrap">
+      <div><h2>把一件具体的事，<br>放到桌面上重新看一遍。</h2><p>"先聊一聊"不是销售话术，就是字面意思：你加我的微信，我们约一次30分钟左右的交流——你讲讲当前的局势，我说明服务方式和边界。聊完不需要当场决定，更不涉及任何费用。之后要不要继续，主动权一直在你手里。</p></div>
+      <div class="contact-card">
+        <b>联系俊哥</b>
+        <p>微信号：ejun1017（添加时备注"人生中场"）</p>
+        <p>公众号：俊哥人生中场</p>
+        <p>视频号：俊哥诉中场</p>
+      </div>
+    </div>
+  </section>
+  <footer>人生中场 · 服务说明 v0.9 · 具体服务约定以双方确认的书面版本为准</footer>
+  <a class="float-cta" href="#contact">先聊一聊</a>
+</body>
+</html>
